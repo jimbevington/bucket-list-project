@@ -25,7 +25,7 @@ const populateCountriesList = function(allCountries){
   for (let country of allCountries){
     const option = document.createElement('option');
     const countryDetails = getCountryDetails(country);
-    option.value = JSON.stringify(countryDetails);
+    option.value = JSON.stringify(countryDetails);      // value is JSON object
     option.innerText = country.name;
     countrySelector.appendChild(option);
   }
@@ -34,8 +34,11 @@ const populateCountriesList = function(allCountries){
 
 const saveCountry = function(){
   const countrySelector = document.getElementById('select-country');
-  const selectedCountry = countrySelector.value;
-  debugger;
+  const selectedCountryJSON = countrySelector.value;
+  const selectedCountryObj = JSON.parse(selectedCountryJSON);
+
+  
+
   // save
   // display
 }

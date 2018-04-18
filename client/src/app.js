@@ -6,19 +6,49 @@ const getAllCountries = function(){
   allCountriesRequest.get(populateCountriesList);
 }
 
+const getCountryDetails = function(country){
+  const countryDetails = {
+    name: country.name,
+    population: country.population,
+    capital: country.capital,
+    flag: country.flag
+  };
+
+  return countryDetails;
+}
+
 const populateCountriesList = function(allCountries){
+
   const countrySelector = document.getElementById('select-country');
-  allCountries.forEach(country => {
+
+// POPULATED THE LIST
+  for (let country of allCountries){
     const option = document.createElement('option');
-    option.value = country.alpha3code;
+    const countryDetails = getCountryDetails(country);
+    option.value = JSON.stringify(countryDetails);      // value is JSON object
     option.innerText = country.name;
     countrySelector.appendChild(option);
-  })
+  }
+
 }
+
+const saveCountry = function(){
+  const countrySelector = document.getElementById('select-country');
+  const selectedCountryJSON = countrySelector.value;
+  const selectedCountryObj = JSON.parse(selectedCountryJSON);
+
+  
+
+  // save
+  // display
+}
+
 
 const app = function(){
 
   getAllCountries();
+  const selectCountryButton = document.getElementById('select-country-button');
+  selectCountryButton.addEventListener('click', saveCountry);
 
 }
 

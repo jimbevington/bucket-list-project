@@ -1,7 +1,11 @@
 const Request = require('./services/request.js');
+const CountryView = require('./views/countryView.js');
 
 const allCountriesRequest = new Request("https://restcountries.eu/rest/v2/all")
 const dbrequest = new Request("/api/countries");
+
+const countryView = new CountryView();
+
 
 const getAllCountries = function(){
   allCountriesRequest.get(populateCountriesList);

@@ -17,6 +17,12 @@ MongoClient.connect("mongodb://localhost:27017", function(err, client){
   const db = client.db("bucket_list");
   console.log("connect to db");
 
+
+
+
+
+
+
   app.listen(3000, function(){
     console.log("listening on port 3000");
   });

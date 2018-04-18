@@ -11,11 +11,10 @@ CountryView.prototype.render = function (country) {
   const bucketList = document.getElementById('bucket-list');
 
   const li = this.formatCountryData(country);
-  debugger;
+  bucketList.appendChild(li);
 };
 
 CountryView.prototype.formatCountryData = function (country) {
-
     const li = document.createElement('li');
     country.className = 'country-list-item';
     // name
@@ -30,7 +29,9 @@ CountryView.prototype.formatCountryData = function (country) {
     pop.innerText = `Population: ${country.population}`;
     // flag
     const flag = document.createElement('img');
+    flag.className = 'flag-img';
     flag.src = country.flag;
+
 
     [name, capital, pop, flag].forEach(element => li.appendChild(element));
 

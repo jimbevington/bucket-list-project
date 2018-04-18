@@ -18,10 +18,7 @@ const populateCountriesList = function(allCountries){
 
 const app = function(){
 
-  // populate dropdown
   getAllCountries();
-  // make Request model, version for Countries api
-  // build
 
 }
 

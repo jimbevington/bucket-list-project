@@ -7,7 +7,13 @@ const getAllCountries = function(){
 }
 
 const populateCountriesList = function(allCountries){
-  
+  const countrySelector = document.getElementById('select-country');
+  allCountries.forEach(country => {
+    const option = document.createElement('option');
+    option.value = country.alpha3code;
+    option.innerText = country.name;
+    countrySelector.appendChild(option);
+  })
 }
 
 const app = function(){

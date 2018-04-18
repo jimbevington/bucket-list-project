@@ -1,6 +1,11 @@
 const Request = require('./services/request.js');
+const CountryView = require('./views/countryView.js');
 
 const allCountriesRequest = new Request("https://restcountries.eu/rest/v2/all")
+const dbrequest = new Request("/api/countries");
+
+const countryView = new CountryView();
+
 
 const getAllCountries = function(){
   allCountriesRequest.get(populateCountriesList);
@@ -33,22 +38,26 @@ const populateCountriesList = function(allCountries){
 }
 
 const saveCountry = function(){
+
   const countrySelector = document.getElementById('select-country');
   const selectedCountryJSON = countrySelector.value;
   const selectedCountryObj = JSON.parse(selectedCountryJSON);
 
-  
-
-  // save
-  // display
+  dbrequest.post(saveRequestComplete, selectedCountryObj);
 }
 
+const saveRequestComplete = function(countryToSave){
+  countryView.addCountry(countryToSave);
+}
 
 const app = function(){
 
   getAllCountries();
   const selectCountryButton = document.getElementById('select-country-button');
-  selectCountryButton.addEventListener('click', saveCountry);
+  selectCountryButton.addEventListener('click', function(event){
+    event.preventDefault();
+    saveCountry();
+  });
 
 }
 

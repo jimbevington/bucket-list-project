@@ -34,7 +34,7 @@ const populateCountriesList = function(allCountries){
 }
 
 const saveCountry = function(){
-  
+
   const countrySelector = document.getElementById('select-country');
   const selectedCountryJSON = countrySelector.value;
   const selectedCountryObj = JSON.parse(selectedCountryJSON);

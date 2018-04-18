@@ -12,7 +12,9 @@ const getCountryDetails = function(country){
     population: country.population,
     capital: country.capital,
     flag: country.flag
-  }
+  };
+
+  return countryDetails;
 }
 
 const populateCountriesList = function(allCountries){
@@ -22,7 +24,8 @@ const populateCountriesList = function(allCountries){
 // POPULATED THE LIST
   for (let country of allCountries){
     const option = document.createElement('option');
-    option.value = getCountryDetails(country);
+    const countryDetails = getCountryDetails(country);
+    option.value = JSON.stringify(countryDetails);
     option.innerText = country.name;
     countrySelector.appendChild(option);
   }
@@ -32,7 +35,7 @@ const populateCountriesList = function(allCountries){
 const saveCountry = function(){
   const countrySelector = document.getElementById('select-country');
   const selectedCountry = countrySelector.value;
-
+  debugger;
   // save
   // display
 }

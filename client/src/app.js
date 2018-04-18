@@ -47,7 +47,7 @@ const saveCountry = function(){
 }
 
 const saveRequestComplete = function(countryToSave){
-  debugger;
+  countryView.addCountry(countryToSave);
 }
 
 const app = function(){

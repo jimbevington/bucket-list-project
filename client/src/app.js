@@ -34,16 +34,15 @@ const populateCountriesList = function(allCountries){
 }
 
 const saveCountry = function(){
+  
   const countrySelector = document.getElementById('select-country');
   const selectedCountryJSON = countrySelector.value;
   const selectedCountryObj = JSON.parse(selectedCountryJSON);
-  dbrequest.post(saveRequestComplete, selectedCountryObj);
 
-  // save
-  // display
+  dbrequest.post(saveRequestComplete, selectedCountryObj);
 }
 
-const saveRequestComplete = function(){
+const saveRequestComplete = function(countryToSave){
   debugger;
 }
 
@@ -51,7 +50,10 @@ const app = function(){
 
   getAllCountries();
   const selectCountryButton = document.getElementById('select-country-button');
-  selectCountryButton.addEventListener('click', saveCountry);
+  selectCountryButton.addEventListener('click', function(event){
+    event.preventDefault();
+    saveCountry();
+  });
 
 }
 

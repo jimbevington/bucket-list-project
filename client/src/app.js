@@ -1,6 +1,7 @@
 const Request = require('./services/request.js');
 
 const allCountriesRequest = new Request("https://restcountries.eu/rest/v2/all")
+const dbrequest = new Request("/api/countries");
 
 const getAllCountries = function(){
   allCountriesRequest.get(populateCountriesList);
@@ -36,13 +37,15 @@ const saveCountry = function(){
   const countrySelector = document.getElementById('select-country');
   const selectedCountryJSON = countrySelector.value;
   const selectedCountryObj = JSON.parse(selectedCountryJSON);
-
-  
+  dbrequest.post(saveRequestComplete, selectedCountryObj);
 
   // save
   // display
 }
 
+const saveRequestComplete = function(){
+  debugger;
+}
 
 const app = function(){
 

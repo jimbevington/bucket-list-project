@@ -1,7 +1,6 @@
 {
   "name": "bucket-list-project",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "nodemon server.js",
@@ -16,5 +15,14 @@
     "mongodb": "^3.0.7",
     "nodemon": "^1.17.3",
     "webpack": "^3.11.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jimbevington/bucket-list-project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jimbevington/bucket-list-project/issues"
+  },
+  "homepage": "https://github.com/jimbevington/bucket-list-project#readme",
+  "description": ""
 }

@@ -51,9 +51,7 @@ const saveCountry = function(){
 
 const saveRequestComplete = function(countryToSave){
   countryView.addCountry(countryToSave);
-  const markerContainer = document.getElementById("big-map");
   map.addMarker(countryToSave.latlng);
-  // debugger;
 }
 
 
@@ -62,7 +60,6 @@ const initialiseMap = function(){
   const center = {lat:0, lng:0};
   const zoom = 2;
   map = new MapWrapper(container, center, zoom);
-  // container.innerHTML = map;
 };
 
 

@@ -7,9 +7,6 @@ const dbrequest = new Request("/api/countries");
 const countryView = new CountryView();
 
 
-const getAllCountries = function(){
-  allCountriesRequest.get(populateCountriesList);
-}
 
 const getCountryDetails = function(country){
   const countryDetails = {
@@ -38,6 +35,11 @@ const populateCountriesList = function(allCountries){
 
 }
 
+const populateBucketList = function(countries){
+  countries.forEach(country => countryView.addCountry(country));
+}
+
+
 const saveCountry = function(){
   const countrySelector = document.getElementById('select-country');
   const selectedCountryJSON = countrySelector.value;
@@ -50,8 +52,11 @@ const saveRequestComplete = function(countryToSave){
   countryView.addCountry(countryToSave);
 }
 
+
 const app = function(){
-  getAllCountries();
+  allCountriesRequest.get(populateCountriesList);
+
+  dbrequest.get(populateBucketList)
 
   const selectCountryButton = document.getElementById('select-country-button');
   selectCountryButton.addEventListener('click', function(event){

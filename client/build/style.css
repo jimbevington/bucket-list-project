@@ -10,7 +10,8 @@
   font-weight: bold;
 }
 
-#bucket-list {
+
+#list-container {
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -19,10 +20,16 @@
   position: fixed;
   top:0;
   right:0;
+  opacity: 0.8;
   background-color: skyblue;
   border-radius: 1em;
   width: 300px;
-  opacity: 0.5;
+
+}
+
+#list-container h2 {
+  font-weight: bold;
+  opacity: 1;
 }
 
 

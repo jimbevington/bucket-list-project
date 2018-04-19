@@ -1,3 +1,8 @@
 .flag-img {
   width: 200px;
 }
+
+#big-map {
+  height: 500px;
+  width: 1000px;
+}

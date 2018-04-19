@@ -1,3 +1,6 @@
+const Request = require('../services/request.js');
+const request = new Request('/api/countries');
+
 const CountryView = function(){
   this.countries = [];
 }
@@ -15,7 +18,6 @@ CountryView.prototype.render = function (country) {
   const removeButton = this.createButtonForm(country);
 
   [li, removeButton].forEach(element => bucketList.appendChild(element));
-
 };
 
 CountryView.prototype.createButtonForm = function (country) {
@@ -31,6 +33,11 @@ CountryView.prototype.createButtonForm = function (country) {
   clearButton.type = 'submit';
   clearButton.className = 'removeButton';
   clearButton.value = 'Remove';
+
+  // clearButton.addEventListener('click', function(event){
+  //   event.preventDefault();
+  //   request.removeCountryFromList();
+  // })
 
   [countryID, clearButton].forEach(element => form.appendChild(element));
 

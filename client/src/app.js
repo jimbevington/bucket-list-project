@@ -24,6 +24,7 @@ const getCountryDetails = function(country){
 const populateCountriesList = function(allCountries){
 
   const countrySelector = document.getElementById('select-country');
+  countrySelector.innerHTML = "";
 
 // POPULATED THE LIST
   for (let country of allCountries){
@@ -49,7 +50,24 @@ const saveCountry = function(){
   const selectedCountryJSON = countrySelector.value;
   const selectedCountryObj = JSON.parse(selectedCountryJSON);
 
+  removeCountryFromSelect(selectedCountryJSON);
+
   dbrequest.post(saveRequestComplete, selectedCountryObj);
+}
+
+const removeCountryFromSelect = function(countryJSON, selectedCountryObj){
+  const countrySelector = document.getElementById('select-country');
+  newOptions = [];
+  for (let option of countrySelector){
+    if (option.value !== countryJSON){
+      const newOption = document.createElement('option');
+      newOption.value = option.value;
+      newOption.innerText = option.innerText;
+      newOptions.push(newOption);
+    }
+  }
+  countrySelector.innerHTML = "";
+  newOptions.forEach(option => countrySelector.appendChild(option));
 }
 
 const saveRequestComplete = function(countryToSave){
@@ -60,6 +78,7 @@ const saveRequestComplete = function(countryToSave){
 const clearBucketList = function(){
   dbrequest.delete(countryView.clearList);
   map.clearMarkers();
+  allCountriesRequest.get(populateCountriesList);
 }
 
 

@@ -1,17 +1,50 @@
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Oswald', sans-serif;
 }
 
 h1 {
-  font-family: 'East Sea Dokdo', cursive;
+  font-family: 'Indie Flower', cursive;
+  font-size: 3em;
 }
+
+
+
 
 ul {
   list-style-type: none;
+  max-height: 500px;
+  overflow: auto;
+}
+
+li {
+  padding: 10px;
+  margin: 15px;
+  background-color: #e17cea;
+  width: 200px;
+  border-radius: 10px;
+  opacity: 1;
 }
 
 select {
-  max-width: 100px;
+  max-width: 150px;
+  display: block;
+  margin-bottom: 1em;
+}
+
+form {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+form, button, select {
+  font-size: 1.1em
+}
+
+button {
+  height: 2em;
+  border-radius: 10px;
+  margin-top: 1em;
 }
 
 .flag-img {
@@ -24,6 +57,10 @@ select {
 
 .countryName {
   font-weight: bold;
+}
+
+#select-country-button {
+  background-color: #3b9b2d;
 }
 
 
@@ -40,7 +77,14 @@ select {
   background-color: skyblue;
   border-radius: 1em;
   width: 300px;
+  /* max-height: 750px; */
+  text-align: center;
+}
 
+#bucket-list{
+  margin: auto;
+  padding: 0px;
+  padding-top: 0.5em;
 }
 
 
@@ -50,7 +94,9 @@ select {
   width: 100%;
 }
 
-
+#country_id {
+  display: none;
+}
 
 #info-content h1 {
   font-size: 20px;

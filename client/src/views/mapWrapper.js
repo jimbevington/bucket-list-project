@@ -15,6 +15,19 @@ MapWrapper.prototype.addMarker = function(country){
   });
   marker.setValues({id: country._id});  // give the country an id
   this.markers.push(marker);
+  let contentString = "<div id=\"info-content\">" +
+    "<h1>" + country.name + "</h1>" +
+    "<p> Capital: " + country.capital + "</p>" +
+    "<p> Population: " + country.population + "</p>" +
+    "<img src=\"" + country.flag + "\">";
+  let infoWindow = new google.maps.InfoWindow({
+    content: contentString
+  });
+  marker.addListener("click", function(){
+    infoWindow.open(marker.map,marker);
+  });
 };
+
+
 
 module.exports = MapWrapper;

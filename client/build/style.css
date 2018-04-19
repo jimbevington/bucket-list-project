@@ -2,15 +2,33 @@
   width: 200px;
 }
 
+.form {
+  padding-bottom: 25px;
+}
+
+.countryName {
+  font-weight: bold;
+}
+
+#bucket-list {
+  margin:3em;
+  position: fixed;
+  top:0;
+  right:0;
+  background-color: skyblue;
+  border-radius: 1em;
+  width: 250px;
+  opacity: 0.5;
+}
+
+
 #big-map {
   /* padding-top: 15px; */
   height: 850px;
   width: 100%;
 }
 
-.form {
-  padding-bottom: 25px;
-}
+
 
 #info-content h1 {
   font-size: 20px;

@@ -86,6 +86,7 @@ const app = function(){
 
   const selectClearButton = document.getElementById('clear-list');
   selectClearButton.addEventListener('click', clearBucketList)
+
 };
 
 

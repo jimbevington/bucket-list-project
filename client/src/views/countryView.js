@@ -38,4 +38,10 @@ CountryView.prototype.formatCountryData = function (country) {
     return li;
 };
 
+CountryView.prototype.clearList = function () {
+  this.countries = [];
+  const bucketList = document.getElementById('bucket-list');
+  bucketList.innerHTML = "";
+};
+
 module.exports = CountryView;

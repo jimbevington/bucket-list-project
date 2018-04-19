@@ -14,6 +14,15 @@ MapWrapper.prototype.addMarker = function(latlong){
     map: this.googleMap
   });
   this.markers.push(marker);
+  let contentString = "stuff";
+  let infoWindow = new google.maps.InfoWindow({
+    content: contentString
+  });
+  marker.addListener("click", function(){
+    infoWindow.open(marker.map,marker);
+  });
 };
+
+
 
 module.exports = MapWrapper;

@@ -12,11 +12,13 @@ const getAllCountries = function(){
 }
 
 const getCountryDetails = function(country){
+  debugger;
   const countryDetails = {
     name: country.name,
     population: country.population,
     capital: country.capital,
-    flag: country.flag
+    flag: country.flag,
+    latlng: country.latlng
   };
 
   return countryDetails;
@@ -38,7 +40,6 @@ const populateCountriesList = function(allCountries){
 }
 
 const saveCountry = function(){
-
   const countrySelector = document.getElementById('select-country');
   const selectedCountryJSON = countrySelector.value;
   const selectedCountryObj = JSON.parse(selectedCountryJSON);
@@ -51,15 +52,14 @@ const saveRequestComplete = function(countryToSave){
 }
 
 const app = function(){
-
   getAllCountries();
+
   const selectCountryButton = document.getElementById('select-country-button');
   selectCountryButton.addEventListener('click', function(event){
     event.preventDefault();
     saveCountry();
   });
-
-}
+};
 
 
 

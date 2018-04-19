@@ -24,7 +24,7 @@ Request.prototype.post = function(callback, body){
     if(this.status !== 201){
       return;
     }
-    
+
     const responseBody = JSON.parse(this.responseText);
     callback(responseBody);
   });
@@ -41,6 +41,10 @@ Request.prototype.delete = function(callback){
     callback();
   });
   request.send();
+};
+
+Request.prototype.removeCountryFromList = function () {
+  debugger;
 };
 
 

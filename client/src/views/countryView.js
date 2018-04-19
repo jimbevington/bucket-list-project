@@ -11,7 +11,27 @@ CountryView.prototype.render = function (country) {
   const bucketList = document.getElementById('bucket-list');
 
   const li = this.formatCountryData(country);
+
+  const removeButton = this.createButtonForm(country);
+
   bucketList.appendChild(li);
+};
+
+CountryView.prototype.createButtonForm = function (country) {
+  const form = document.createElement('form');
+  // need a hidden field with object id
+  const countryID = document.createElement('input');
+  countryID.id = "country_id"
+  countryID.value = country._id;
+  // need submit button
+  // need an event listener here
+  const clearButton = document.createElement('input')
+  clearButton.type = 'submit';
+  clearButton.className = 'removeButton';
+
+  [countryID, clearButton].forEach(element => form.appendChild(element));
+
+  return form;
 };
 
 CountryView.prototype.formatCountryData = function (country) {

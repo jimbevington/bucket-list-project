@@ -76,7 +76,7 @@ const saveRequestComplete = function(countryToSave){
 }
 
 const clearBucketList = function(){
-  dbrequest.delete(countryView.clearList);
+  dbrequest.delete(countryView.clearList());
   map.clearMarkers();
   allCountriesRequest.get(populateCountriesList);
 }

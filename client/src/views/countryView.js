@@ -1,5 +1,6 @@
 const Request = require('../services/request.js');
 const request = new Request('/api/countries');
+const allCountriesRequest = new Request("https://restcountries.eu/rest/v2/all")
 
 const CountryView = function(){
   this.countries = [];
@@ -46,7 +47,10 @@ CountryView.prototype.removeCountryFromList = function(countryID){
   const bucketList = document.getElementById('bucket-list');
   bucketList.innerHTML = "";
 
+  allCountriesRequest.get(populateCountriesList);
+
   this.countries.forEach(country => this.render(country));
+
 };
 
 CountryView.prototype.createButtonForm = function (country) {

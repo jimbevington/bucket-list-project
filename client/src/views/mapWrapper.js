@@ -14,7 +14,6 @@ MapWrapper.prototype.addMarker = function(country){
     map: this.googleMap
   });
   marker.setValues({id: country._id});  // give the country an id
-  debugger;
   this.markers.push(marker);
 };
 

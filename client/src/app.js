@@ -5,8 +5,8 @@ const MapWrapper = require('./views/mapWrapper.js');
 const allCountriesRequest = new Request("https://restcountries.eu/rest/v2/all")
 const dbrequest = new Request("/api/countries");
 
-const countryView = new CountryView();
 var map;
+const countryView = new CountryView(map);
 
 
 const getCountryDetails = function(country){
@@ -74,8 +74,8 @@ const clearBucketList = function(){
 
 
 const app = function(){
-  allCountriesRequest.get(populateCountriesList);
   initialiseMap();
+  allCountriesRequest.get(populateCountriesList);
   dbrequest.get(populateBucketList)
 
 

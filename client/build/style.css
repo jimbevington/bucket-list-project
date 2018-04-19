@@ -1,5 +1,17 @@
 body {
-  font-family: 
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+  font-family: 'East Sea Dokdo', cursive;
+}
+
+ul {
+  list-style-type: none;
+}
+
+select {
+  max-width: 100px;
 }
 
 .flag-img {

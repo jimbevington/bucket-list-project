@@ -35,6 +35,14 @@ MapWrapper.prototype.clearMarkers = function(){
   this.markers = [];
 }
 
+MapWrapper.prototype.removeMarker = function (countryID) {
+  this.markers.forEach(marker => {
+    if (marker.id === countryID){
+      marker.setMap(null);
+    }
+  })
+  this.markers = this.markers.filter(marker => marker.id !== countryID);
+};
 
 
 module.exports = MapWrapper;

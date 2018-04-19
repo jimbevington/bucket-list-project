@@ -3,6 +3,7 @@ const request = new Request('/api/countries');
 
 const CountryView = function(){
   this.countries = [];
+  this.map = null;
 }
 
 CountryView.prototype.addCountry = function (country) {
@@ -37,6 +38,8 @@ CountryView.prototype.render = function (country) {
 
 CountryView.prototype.removeCountryFromList = function(countryID){
   this.countries = this.countries.filter(country => country._id != countryID);
+
+  this.map.removeMarker(countryID);
 
   const bucketList = document.getElementById('bucket-list');
   bucketList.innerHTML = "";

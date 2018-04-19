@@ -11,13 +11,17 @@
 }
 
 #bucket-list {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
   margin:3em;
+  padding: 1em;
   position: fixed;
   top:0;
   right:0;
   background-color: skyblue;
   border-radius: 1em;
-  width: 250px;
+  width: 300px;
   opacity: 0.5;
 }
 

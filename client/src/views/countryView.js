@@ -17,8 +17,10 @@ CountryView.prototype.render = function (country) {
   const li = this.formatCountryListItems(country);
 
   const removeButton = this.createButtonForm(country);
+  li.appendChild(removeButton);
+  bucketList.appendChild(li);
 
-  [li, removeButton].forEach(element => bucketList.appendChild(element));
+  // [li, removeButton].forEach(element => bucketList.appendChild(element));
 
 //  add event Listener to REMOVE BUTTON
   removeButton.addEventListener('submit', function(event){

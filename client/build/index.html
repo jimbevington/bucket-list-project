@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Oswald" rel="stylesheet">
   <script src="https://maps.googleapis.com/maps/api/js"></script>
   <script src="bundle.js"></script>
 
@@ -19,20 +20,23 @@
   <div id="big-map"></div>
 
   <div class="list-controls">
-    <button type="button" id="clear-list">Clear List</button>
+
   </div>
 
   <div class="container" id="list-container">
 
-    <h2 id="list-title">before I die, take me to ...</h2>
+    <h1 id="list-title">before I die, take me to ...</h1>
 
     <form>
       <select name="select-country" id="select-country"></select>
-      <button id="select-country-button" type="submit">Add to Bucket List</button>
+      <button id="select-country-button" type="submit">Add</button>
+
     </form>
+    
+    <button type="button" id="clear-list">Clear List</button>
 
     <ul id="bucket-list"></ul>
-    
+
   </div>
 
 

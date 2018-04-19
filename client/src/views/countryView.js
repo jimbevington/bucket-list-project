@@ -1,3 +1,6 @@
+const Request = require('../services/request.js');
+const request = new Request('/api/countries');
+
 const CountryView = function(){
   this.countries = [];
 }
@@ -11,7 +14,34 @@ CountryView.prototype.render = function (country) {
   const bucketList = document.getElementById('bucket-list');
 
   const li = this.formatCountryData(country);
-  bucketList.appendChild(li);
+
+  const removeButton = this.createButtonForm(country);
+
+  [li, removeButton].forEach(element => bucketList.appendChild(element));
+};
+
+CountryView.prototype.createButtonForm = function (country) {
+  const form = document.createElement('form');
+  // need a hidden field with object id
+  const countryID = document.createElement('input');
+  countryID.id = "country_id"
+  countryID.value = country._id;
+  countryID.type = 'hidden';
+  // need submit button
+  // need an event listener here
+  const clearButton = document.createElement('input')
+  clearButton.type = 'submit';
+  clearButton.className = 'removeButton';
+  clearButton.value = 'Remove';
+
+  // clearButton.addEventListener('click', function(event){
+  //   event.preventDefault();
+  //   request.removeCountryFromList();
+  // })
+
+  [countryID, clearButton].forEach(element => form.appendChild(element));
+
+  return form;
 };
 
 CountryView.prototype.formatCountryData = function (country) {

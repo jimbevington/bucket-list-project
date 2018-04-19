@@ -56,10 +56,6 @@ const clearBucketList = function(){
   dbrequest.delete(countryView.clearList);
 }
 
-const deleteListComplete = function(){
-  countryView.clearList();
-}
-
 
 const app = function(){
   allCountriesRequest.get(populateCountriesList);

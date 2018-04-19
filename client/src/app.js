@@ -12,7 +12,6 @@ const getAllCountries = function(){
 }
 
 const getCountryDetails = function(country){
-  debugger;
   const countryDetails = {
     name: country.name,
     population: country.population,

@@ -53,11 +53,11 @@ const saveRequestComplete = function(countryToSave){
 }
 
 const clearBucketList = function(){
-  dbrequest.delete(deleteListComplete);
+  dbrequest.delete(countryView.clearList);
 }
 
 const deleteListComplete = function(){
-  debugger;
+  countryView.clearList();
 }
 
 

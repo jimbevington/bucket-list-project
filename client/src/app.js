@@ -37,6 +37,7 @@ const populateCountriesList = function(allCountries){
 }
 
 const populateBucketList = function(countries){
+  
   countries.forEach(country => countryView.addCountry(country));
 }
 

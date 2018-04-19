@@ -24,6 +24,7 @@ CountryView.prototype.render = function (country) {
 
     const countryID = event.target[0].value;  // get countryID from form field
     const countryURL = request.url + "/" + countryID;
+
     const countryRequest = new Request(countryURL);
     countryRequest.delete(function(){
       this.removeCountryFromList(countryID);

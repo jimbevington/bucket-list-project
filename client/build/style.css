@@ -2,15 +2,44 @@
   width: 200px;
 }
 
+.form {
+  padding-bottom: 25px;
+}
+
+.countryName {
+  font-weight: bold;
+}
+
+
+#list-container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin:3em;
+  padding: 1em;
+  position: fixed;
+  top:0;
+  right:0;
+  opacity: 0.8;
+  background-color: skyblue;
+  border-radius: 1em;
+  width: 300px;
+
+}
+
+#list-container h2 {
+  font-weight: bold;
+  opacity: 1;
+}
+
+
 #big-map {
   /* padding-top: 15px; */
   height: 850px;
   width: 100%;
 }
 
-.form {
-  padding-bottom: 25px;
-}
+
 
 #info-content h1 {
   font-size: 20px;

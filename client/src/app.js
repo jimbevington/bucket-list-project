@@ -72,11 +72,6 @@ const initialiseMap = function(){
 };
 
 
-
-
-
-
-
 const app = function(){
   initialiseMap();
   allCountriesRequest.get(populateCountriesList);
@@ -91,6 +86,7 @@ const app = function(){
 
   const selectClearButton = document.getElementById('clear-list');
   selectClearButton.addEventListener('click', clearBucketList)
+
 };
 
 

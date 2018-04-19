@@ -13,10 +13,7 @@
 <body>
 
   <div class="container">
-    <form>
-      <select name="select-country" id="select-country"></select>
-      <button id="select-country-button" type="submit">Add to Bucket List</button>
-    </form>
+
   </div>
 
   <div id="big-map"></div>
@@ -25,9 +22,19 @@
     <button type="button" id="clear-list">Clear List</button>
   </div>
 
-  <div class="container">
+  <div class="container" id="list-container">
+
+    <h2 id="list-title">before I die, take me to ...</h2>
+
+    <form>
+      <select name="select-country" id="select-country"></select>
+      <button id="select-country-button" type="submit">Add to Bucket List</button>
+    </form>
+
     <ul id="bucket-list"></ul>
+    
   </div>
+
 
 </body>
 </html>

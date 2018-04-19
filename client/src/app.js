@@ -6,7 +6,7 @@ const allCountriesRequest = new Request("https://restcountries.eu/rest/v2/all")
 const dbrequest = new Request("/api/countries");
 
 const countryView = new CountryView();
-
+var map;
 
 
 const getCountryDetails = function(country){
@@ -51,6 +51,9 @@ const saveCountry = function(){
 
 const saveRequestComplete = function(countryToSave){
   countryView.addCountry(countryToSave);
+  const markerContainer = document.getElementById("big-map");
+  map.addMarker(countryToSave.latlng);
+  // debugger;
 }
 
 
@@ -58,7 +61,8 @@ const initialiseMap = function(){
   const container = document.getElementById("big-map");
   const center = {lat:0, lng:0};
   const zoom = 2;
-  const map = new MapWrapper(container, center, zoom);
+  map = new MapWrapper(container, center, zoom);
+  // container.innerHTML = map;
 };
 
 

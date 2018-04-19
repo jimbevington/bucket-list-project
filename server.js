@@ -8,7 +8,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("client/build"));
 
 const MongoClient = require("mongodb").MongoClient;
-const ObjectId = require("mongodb").ObjectID;
+const ObjectID = require("mongodb").ObjectID;
 
 MongoClient.connect("mongodb://localhost:27017", function(err, client){
   if(err){
@@ -58,6 +58,21 @@ MongoClient.connect("mongodb://localhost:27017", function(err, client){
       res.send();
     });
   });
+
+  app.delete("/api/countries/:id", function(req, res){
+    const countriesCollection = db.collection("countries");
+    const objectId = ObjectID(req.params.id);
+    const filterObject = {_id: objectId };
+    countriesCollection.deleteOne(filterObject, function(err, result){
+      if(err){
+        console.log(err);
+        res.status(500);
+        res.send();
+      }
+      res.status(204);
+      res.send();
+    });
+  })
 
   app.put("/api/countries/:id", function(req, res){
     const countriesCollection = db.collection("countries");

@@ -11,3 +11,7 @@
 .form {
   padding-bottom: 25px;
 }
+
+#info-content.h1 {
+  font-size: 12px;
+}

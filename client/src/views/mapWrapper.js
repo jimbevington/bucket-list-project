@@ -7,14 +7,18 @@ const MapWrapper = function(container, coords, zoom){
   this.markers = [];
 };
 
-MapWrapper.prototype.addMarker = function(latlong){
-  let coords = {lat: latlong[0], lng: latlong[1]}
+MapWrapper.prototype.addMarker = function(country){
+  let coords = {lat: country.latlng[0], lng: country.latlng[1]}
   const marker = new google.maps.Marker({
     position: coords,
     map: this.googleMap
   });
   this.markers.push(marker);
-  let contentString = "stuff";
+  let contentString = "<div id=\"info-content\">" +
+    "<h1>" + country.name + "</h1>" +
+    "<p> Capital: " + country.capital + "</p>" +
+    "<p> Population: " + country.population + "</p>" +
+    "<img src=\"" + country.flag + "\">";
   let infoWindow = new google.maps.InfoWindow({
     content: contentString
   });

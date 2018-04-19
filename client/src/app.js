@@ -51,7 +51,7 @@ const saveCountry = function(){
 
 const saveRequestComplete = function(countryToSave){
   countryView.addCountry(countryToSave);
-  map.addMarker(countryToSave.latlng);
+  map.addMarker(countryToSave);
 }
 
 

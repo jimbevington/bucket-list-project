@@ -12,6 +12,14 @@
   padding-bottom: 25px;
 }
 
-#info-content.h1 {
-  font-size: 12px;
+#info-content h1 {
+  font-size: 20px;
+}
+
+#info-content p {
+  font-size: 14px;
+}
+
+#info-content img {
+  width: 150px;
 }

@@ -18,6 +18,12 @@ CountryView.prototype.render = function (country) {
   const removeButton = this.createButtonForm(country);
 
   [li, removeButton].forEach(element => bucketList.appendChild(element));
+
+  removeButton.addEventListener('submit', function(event){
+    event.preventDefault();
+    const countryID = this[0].value;  // get countryID from form field
+    request.removeCountryFromList(countryID);
+  })
 };
 
 CountryView.prototype.createButtonForm = function (country) {
@@ -33,11 +39,6 @@ CountryView.prototype.createButtonForm = function (country) {
   clearButton.type = 'submit';
   clearButton.className = 'removeButton';
   clearButton.value = 'Remove';
-
-  // clearButton.addEventListener('click', function(event){
-  //   event.preventDefault();
-  //   request.removeCountryFromList();
-  // })
 
   [countryID, clearButton].forEach(element => form.appendChild(element));
 

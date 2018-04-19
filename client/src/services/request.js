@@ -43,7 +43,7 @@ Request.prototype.delete = function(callback){
   request.send();
 };
 
-Request.prototype.removeCountryFromList = function () {
+Request.prototype.removeCountryFromList = function (countryID) {
   debugger;
 };
 

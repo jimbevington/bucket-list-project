@@ -1,3 +1,7 @@
+body {
+  font-family: 
+}
+
 .flag-img {
   width: 200px;
 }
@@ -25,11 +29,6 @@
   border-radius: 1em;
   width: 300px;
 
-}
-
-#list-container h2 {
-  font-weight: bold;
-  opacity: 1;
 }
 
 

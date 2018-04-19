@@ -52,6 +52,14 @@ const saveRequestComplete = function(countryToSave){
   countryView.addCountry(countryToSave);
 }
 
+const clearBucketList = function(){
+  dbrequest.delete(deleteListComplete);
+}
+
+const deleteListComplete = function(){
+  debugger;
+}
+
 
 const app = function(){
   allCountriesRequest.get(populateCountriesList);

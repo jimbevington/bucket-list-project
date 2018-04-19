@@ -21,13 +21,23 @@ CountryView.prototype.render = function (country) {
 
   removeButton.addEventListener('submit', function(event){
     event.preventDefault();
-    const countryID = this[0].value;  // get countryID from form field
+
+    const countryID = event.target[0].value;  // get countryID from form field
     const countryURL = request.url + "/" + countryID;
     const countryRequest = new Request(countryURL);
     countryRequest.delete(function(){
-      debugger;
+      this.removeCountryFromList(countryID);
     }.bind(this));
-  });
+  }.bind(this));
+};
+
+CountryView.prototype.removeCountryFromList = function(countryID){
+  this.countries = this.countries.filter(country => country._id != countryID);
+
+  const bucketList = document.getElementById('bucket-list');
+  bucketList.innerHTML = "";
+
+  this.countries.forEach(country => this.render(country));
 };
 
 CountryView.prototype.createButtonForm = function (country) {

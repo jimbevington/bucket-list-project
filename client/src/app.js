@@ -63,6 +63,9 @@ const app = function(){
     event.preventDefault();
     saveCountry();
   });
+
+  const selectClearButton = document.getElementById('clear-list');
+  selectClearButton.addEventListener('click', clearBucketList)
 };
 
 

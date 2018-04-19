@@ -37,8 +37,10 @@ const populateCountriesList = function(allCountries){
 }
 
 const populateBucketList = function(countries){
-  
-  countries.forEach(country => countryView.addCountry(country));
+  countries.forEach(country => {
+    map.addMarker(country);
+    countryView.addCountry(country);
+  });
 }
 
 
@@ -52,7 +54,7 @@ const saveCountry = function(){
 
 const saveRequestComplete = function(countryToSave){
   countryView.addCountry(countryToSave);
-  map.addMarker(countryToSave.latlng);
+  map.addMarker(countryToSave);
 }
 
 

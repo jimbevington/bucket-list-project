@@ -22,8 +22,12 @@ CountryView.prototype.render = function (country) {
   removeButton.addEventListener('submit', function(event){
     event.preventDefault();
     const countryID = this[0].value;  // get countryID from form field
-    request.removeCountryFromList(countryID);
-  })
+    const countryURL = request.url + "/" + countryID;
+    const countryRequest = new Request(countryURL);
+    countryRequest.delete(function(){
+      debugger;
+    }.bind(this));
+  });
 };
 
 CountryView.prototype.createButtonForm = function (country) {

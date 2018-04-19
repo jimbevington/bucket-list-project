@@ -19,12 +19,15 @@ CountryView.prototype.render = function (country) {
 
   [li, removeButton].forEach(element => bucketList.appendChild(element));
 
+//  add event Listener to REMOVE BUTTON
   removeButton.addEventListener('submit', function(event){
     event.preventDefault();
 
-    const countryID = event.target[0].value;  // get countryID from form field
+    // get the Country ID, add to URL
+    const countryID = event.target[0].value;
     const countryURL = request.url + "/" + countryID;
 
+    // make a Delete Request with the country ID
     const countryRequest = new Request(countryURL);
     countryRequest.delete(function(){
       this.removeCountryFromList(countryID);

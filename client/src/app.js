@@ -72,11 +72,6 @@ const initialiseMap = function(){
 };
 
 
-
-
-
-
-
 const app = function(){
   initialiseMap();
   allCountriesRequest.get(populateCountriesList);

@@ -14,7 +14,7 @@ CountryView.prototype.addCountry = function (country) {
 CountryView.prototype.render = function (country) {
   const bucketList = document.getElementById('bucket-list');
 
-  const li = this.formatCountryData(country);
+  const li = this.formatCountryListItems(country);
 
   const removeButton = this.createButtonForm(country);
 
@@ -66,26 +66,15 @@ CountryView.prototype.createButtonForm = function (country) {
   return form;
 };
 
-CountryView.prototype.formatCountryData = function (country) {
+CountryView.prototype.formatCountryListItems = function (country) {
     const li = document.createElement('li');
     country.className = 'country-list-item';
     // name
     const name = document.createElement('p');
     name.className = 'countryName';
     name.innerText = country.name;
-    // capital
-    const capital = document.createElement('p');
-    capital.innerText = `Capital: ${country.capital}`;
-    // population
-    const pop = document.createElement('p');
-    pop.innerText = `Population: ${country.population}`;
-    // flag
-    const flag = document.createElement('img');
-    flag.className = 'flag-img';
-    flag.src = country.flag;
 
-    [name, capital, pop, flag].forEach(element => li.appendChild(element));
-
+    li.appendChild(name);
     return li;
 };
 

@@ -6,7 +6,7 @@ const allCountriesRequest = new Request("https://restcountries.eu/rest/v2/all")
 const dbrequest = new Request("/api/countries");
 
 var map;
-const countryView = new CountryView(map);
+var countryView = new CountryView();
 
 
 const getCountryDetails = function(country){
@@ -57,20 +57,24 @@ const saveRequestComplete = function(countryToSave){
   map.addMarker(countryToSave);
 }
 
+const clearBucketList = function(){
+  dbrequest.delete(countryView.clearList);
+  map.clearMarkers();
+}
+
 
 const initialiseMap = function(){
   const container = document.getElementById("big-map");
   const center = {lat:0, lng:0};
   const zoom = 2;
   map = new MapWrapper(container, center, zoom);
+  countryView.map = map;
 };
 
 
 
 
-const clearBucketList = function(){
-  dbrequest.delete(countryView.clearList);
-}
+
 
 
 const app = function(){

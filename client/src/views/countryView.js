@@ -84,7 +84,6 @@ CountryView.prototype.formatCountryData = function (country) {
     flag.className = 'flag-img';
     flag.src = country.flag;
 
-
     [name, capital, pop, flag].forEach(element => li.appendChild(element));
 
     return li;

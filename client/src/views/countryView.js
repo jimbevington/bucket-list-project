@@ -14,7 +14,8 @@ CountryView.prototype.render = function (country) {
 
   const removeButton = this.createButtonForm(country);
 
-  bucketList.appendChild(li);
+  [li, removeButton].forEach(element => bucketList.appendChild(element));
+
 };
 
 CountryView.prototype.createButtonForm = function (country) {
@@ -23,11 +24,13 @@ CountryView.prototype.createButtonForm = function (country) {
   const countryID = document.createElement('input');
   countryID.id = "country_id"
   countryID.value = country._id;
+  countryID.type = 'hidden';
   // need submit button
   // need an event listener here
   const clearButton = document.createElement('input')
   clearButton.type = 'submit';
   clearButton.className = 'removeButton';
+  clearButton.value = 'Remove';
 
   [countryID, clearButton].forEach(element => form.appendChild(element));
 
